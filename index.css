@@ -1,0 +1,69 @@
+body {
+  background-color: mediumpurple;
+}
+
+.square {
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  opacity: .6;
+}
+
+.square {
+  /* transform: translate(calc(100vw - 100% - 16px));  */
+  /* trazendo o quadrado para a esquerda de volta */
+  /* animation-name: move, blink;  
+  animation-duration: 1s, 200ms; */
+  /* retornando o quadrado para a direita  */
+  /* animation-fill-mode: forwards;  */
+  /* tornar o reverso do movimento anterior  */
+  /* animation-direction: reverse;  */
+  /* para alternar a direção da animação  */
+  /* animation-direction: alternate;  */
+  /* animation-iteration-count: 2;  */
+  /* movimentação sem interrupção  */
+  /* animation-iteration-count: infinite;  */
+  /* fazendo a animação esperar 2s  */
+  /* animation-delay: 2s;  */
+  /* testando outras funcionalidades de tempo  */
+  /* animation-timing-function: ease-in-out;  */
+  /* animation-timing-function: steps(10);  */
+
+  /* aplicando todas as configurações em uma linha  */
+  animation: move 1s forwards alternate infinite, 
+  blink 100ms infinite;
+}
+
+.square:hover {
+  /* parar a movimentação do quadrado ao passar o mouse  */
+  animation-play-state: paused;
+}
+
+@keyframes move {
+  0% {
+  /* iniciar a movimentação do ponto inicial  */
+
+  }
+  
+  100% {
+    /* continuar a movimentação até o ponto desejado
+    transportar o quadrado para o outro lado da página 
+    calc - 100% e - 16px é possível para deslocar a esquerda  */
+    transform: translate(calc(100vw - 100% - 16px));
+
+  }
+
+  /* 50% {
+    realiza a movimentação e retorna ao ponto inicial 
+    transform: translate(calc(100vw - 100% - 16px));
+  } */
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: .1;
+  }
+  50% {
+    opacity: 1;
+  }
+}
